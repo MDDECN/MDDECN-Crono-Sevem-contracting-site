@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go in MDDECN (Crono Sevem)!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0c;
+            --accent: #00f2ff; /* Azul Neon Crono */
+            --glass: rgba(255, 255, 255, 0.05);
+            --text: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #0a0a0c 100%);
+        }
+
+        .container {
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent);
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+        }
+
+        p.subtitle {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 1.2rem;
+        }
+
+        label {
+            display: block;
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid #333;
+            border-radius: 8px;
+            color: white;
+            font-family: inherit;
+            box-sizing: border-box;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+        }
+
+        /* Estilo para o input de arquivo */
+        input[type="file"] {
+            font-size: 0.8rem;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: var(--accent);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.4s;
+            text-transform: uppercase;
+            margin-top: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background: #fff;
+            box-shadow: 0 0 25px var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .footer-note {
+            margin-top: 1.5rem;
+            font-size: 0.65rem;
+            color: #555;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>MDDECN</h1>
+    <p class="subtitle">Crono Sevem Recruitment Portal</p>
+
+    <form action="https://formspree.io/f/miguelsaldanha1213@gmail.com" method="POST" enctype="multipart/form-data">
+        
+        <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="E.g. Miguel Albuquerque" required>
+        </div>
+
+        <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="email@example.com" required>
+        </div>
+
+        <div class="form-group">
+            <label>GitHub Profile (Link)</label>
+            <input type="url" name="github" placeholder="https://github.com/your-user" required>
+        </div>
+
+        <div class="form-group">
+            <label>Attach Resume (English Only)</label>
+            <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
+        </div>
+
+        <button type="submit">Send Application</button>
+
+        <div class="footer-note">
+            Authentication Required via MDDECN Protocols.
+        </div>
+    </form>
+</div>
+
+<script>
+    const form = document.querySelector('form');
+    form.onsubmit = () => {
+        const btn = document.querySelector('button');
+        btn.innerHTML = "UPLOADING DATA...";
+        btn.style.letterSpacing = "3px";
+    };
+</script>
+
+</body>
+</html>
+
